@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="assessment"
+run/main_scene="uid://btvuh1y11i2yy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=4.0
 
 [physics]
 
