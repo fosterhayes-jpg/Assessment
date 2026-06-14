@@ -163,11 +163,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=739061269]
-script = ExtResource("1_g2els")
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 8.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84459100]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 24.0
+
+[node name="player" type="CharacterBody2D" unique_id=739061269]
+collision_layer = 3
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=61390193]
 sprite_frames = SubResource("SpriteFrames_fulsm")
 animation = &"front idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84459100]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="player_hitbox" type="Area2D" parent="." unique_id=1626662370]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox" unique_id=799674521]
+shape = SubResource("CircleShape2D_qhqgy")
