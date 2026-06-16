@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+var zombie_inattack_range = false
+var zombie_attack_cooldown = true
+
+
 const speed = 80
 var current_direction = "none"
 
@@ -68,5 +72,9 @@ func play_anim(movement):
 		elif movement == 0:
 			anim.play("back idle")
 	
-	
-	
+func _on_player_hitbox_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_player_hitbox_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

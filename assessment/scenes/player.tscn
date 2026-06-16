@@ -210,6 +210,10 @@ animations = [{
 radius = 8.0
 height = 35.555557
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
+radius = 16.0
+height = 48.0
+
 [node name="player" type="CharacterBody2D" unique_id=739061269]
 collision_layer = 3
 script = ExtResource("1_g2els")
@@ -221,6 +225,16 @@ animation = &"back walk"
 frame_progress = 0.72328705
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84459100]
-position = Vector2(0, -13.07)
-scale = Vector2(0.9, 0.9)
+position = Vector2(0, -11.385)
+scale = Vector2(0.805, 0.805)
 shape = SubResource("CapsuleShape2D_qhqgy")
+
+[node name="Player hitbox" type="Area2D" parent="." unique_id=1249129457]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player hitbox" unique_id=851498488]
+position = Vector2(0, -17.795)
+scale = Vector2(0.935, 0.935)
+shape = SubResource("CapsuleShape2D_dqkch")
+
+[connection signal="body_entered" from="Player hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="Player hitbox" to="." method="_on_player_hitbox_body_exited"]

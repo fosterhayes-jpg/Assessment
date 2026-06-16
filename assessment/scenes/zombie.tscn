@@ -69,6 +69,9 @@ radius = 80.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_xepks"]
 radius = 16.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_httt1"]
+radius = 24.0
+
 [node name="zombie" type="CharacterBody2D" unique_id=437287189]
 script = ExtResource("1_httt1")
 
@@ -87,6 +90,13 @@ shape = SubResource("CircleShape2D_aetfh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333819796]
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_xepks")
+
+[node name="Zombie hitbox" type="Area2D" parent="." unique_id=1132874711]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zombie hitbox" unique_id=295058866]
+position = Vector2(0, -14.47)
+scale = Vector2(1.055, 1.055)
+shape = SubResource("CircleShape2D_httt1")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
