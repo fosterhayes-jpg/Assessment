@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dsmok05k5kvft" path="res://icon.svg" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://b7t4hgf3qxubq" path="res://scenes/player.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://c7hlhk72m2hmx" path="res://scenes/zombie.tscn" id="3_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://dd6cih30c2jdb" path="res://Assets/single grass for cliff.png" id="4_qfnet"]
 [ext_resource type="Texture2D" uid="uid://bhexwrmyd63fr" path="res://Assets/Cliffs (1).png" id="5_71j4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
@@ -227,10 +228,16 @@ texture_region_size = Vector2i(32, 32)
 2:7/0 = 0
 3:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mrxx"]
+texture = ExtResource("4_qfnet")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_4mrxx"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i7141")
+sources/1 = SubResource("TileSetAtlasSource_4mrxx")
 
 [node name="world" type="Node2D" unique_id=319010386]
 
@@ -244,7 +251,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAABAAMAAAAAAAEAAAABAAMAAAAAAAIAAAABAAM
 tile_set = SubResource("TileSet_k0juu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1213604466]
-tile_map_data = PackedByteArray("AAAGAAAAAAACAAAAAAAFAAAAAAADAAAAAAAHAAAAAAADAAEAAAAHAAEAAAACAAEAAAAHAAIAAAADAAAAAAAIAAIAAAACAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAACAAAAAAAMAAIAAAADAAEAAAAMAAMAAAADAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAEAAAAOAAIAAAABAAEAAAAOAAEAAAABAAEAAAAOAAAAAAAAAAIAAAAPAAAAAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAGAAAAAAACAAAAAAAFAAAAAAADAAAAAAAHAAAAAAADAAEAAAAHAAEAAAACAAEAAAAHAAIAAAADAAAAAAAIAAIAAAACAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAACAAAAAAAMAAIAAAADAAEAAAAMAAMAAAADAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAEAAAAOAAIAAAABAAEAAAAOAAEAAAABAAEAAAAOAAAAAAAAAAIAAAAPAAAAAAAAAAEAAAANAAIAAQAAAAAAAAANAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_4mrxx")
 
 [node name="player" parent="." unique_id=739061269 instance=ExtResource("2_rwgxs")]
