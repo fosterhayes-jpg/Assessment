@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 var zombie_inattack_range = false
 var zombie_attack_cooldown = true
-
+var health = 100
+var player_alive = true
 
 const speed = 80
 var current_direction = "none"
@@ -12,6 +13,7 @@ func _ready():
 
 func _physics_process(delta):
 	playermovement(delta)
+	zombie_attack()
 
 func playermovement(delta):
 	
@@ -72,9 +74,20 @@ func play_anim(movement):
 		elif movement == 0:
 			anim.play("back idle")
 	
-func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	
+func player():
+	pass
+	
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("zombie"):
+		zombie_inattack_range = true
 
 
-func _on_player_hitbox_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_player_hitbox_body_exited(body):
+	if body.has_method("zombie"):
+		zombie_inattack_range = false
+		
+func zombie_attack():
+	if zombie_inattack_range:
+		print("player - 10 health")
+	

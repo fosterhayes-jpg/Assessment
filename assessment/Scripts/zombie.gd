@@ -25,3 +25,6 @@ func _on_detection_area_body_entered(body: Node2D):
 func _on_detection_area_body_exited(_body: Node2D):
 	player = null
 	player_chase = false
+
+func zombie():
+	pass
