@@ -78,7 +78,6 @@ script = ExtResource("1_httt1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=10617456]
 sprite_frames = SubResource("SpriteFrames_3fthk")
 animation = &"death"
-offset = Vector2(0, -14)
 
 [node name="detection_area" type="Area2D" parent="." unique_id=1340752056]
 collision_layer = 2
@@ -88,13 +87,11 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_aetfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333819796]
-position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_xepks")
 
 [node name="Zombie hitbox" type="Area2D" parent="." unique_id=1132874711]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombie hitbox" unique_id=295058866]
-position = Vector2(0, -14.47)
 scale = Vector2(1.055, 1.055)
 shape = SubResource("CircleShape2D_httt1")
 
