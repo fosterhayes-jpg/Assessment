@@ -233,8 +233,11 @@ shape = SubResource("CapsuleShape2D_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player hitbox" unique_id=851498488]
 position = Vector2(0, -17.795)
-scale = Vector2(0.935, 0.935)
+scale = Vector2(1.015, 1.015)
 shape = SubResource("CapsuleShape2D_dqkch")
+
+[node name="attack_cooldown" type="Timer" parent="." unique_id=1782174673]
 
 [connection signal="body_entered" from="Player hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="Player hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]

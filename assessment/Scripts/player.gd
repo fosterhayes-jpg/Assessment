@@ -15,6 +15,11 @@ func _physics_process(delta):
 	playermovement(delta)
 	zombie_attack()
 
+	if health <= 0:
+		player_alive = false
+		health = 0 
+		
+
 func playermovement(delta):
 	
 	if Input.is_action_pressed("ui_right"):
@@ -88,6 +93,11 @@ func _on_player_hitbox_body_exited(body):
 		zombie_inattack_range = false
 		
 func zombie_attack():
-	if zombie_inattack_range:
-		print("player - 10 health")
-	
+	if zombie_inattack_range and zombie_attack_cooldown == true:
+		health = health - 20
+		zombie_attack_cooldown = false
+		$attack_cooldown.start()
+		print(health)
+
+func _on_attack_cooldown_timeout():
+	zombie_attack_cooldown = true
