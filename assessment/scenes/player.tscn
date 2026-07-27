@@ -237,6 +237,7 @@ scale = Vector2(1.015, 1.015)
 shape = SubResource("CapsuleShape2D_dqkch")
 
 [node name="attack_cooldown" type="Timer" parent="." unique_id=1782174673]
+wait_time = 0.5
 
 [connection signal="body_entered" from="Player hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="Player hitbox" to="." method="_on_player_hitbox_body_exited"]
