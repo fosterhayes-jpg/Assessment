@@ -68,6 +68,14 @@ region = Rect2(0, 64, 48, 64)
 atlas = ExtResource("3_qhqgy")
 region = Rect2(48, 64, 48, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
 atlas = ExtResource("3_qhqgy")
 region = Rect2(96, 128, 48, 64)
@@ -172,7 +180,13 @@ animations = [{
 "name": &"front walk",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r5pv")
+}],
 "loop": true,
 "name": &"side attack",
 "speed": 5.0
@@ -221,8 +235,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=61390193]
 position = Vector2(0, -19.505)
 sprite_frames = SubResource("SpriteFrames_fulsm")
-animation = &"back walk"
-frame_progress = 0.72328705
+animation = &"back attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84459100]
 position = Vector2(0, -11.385)
@@ -239,6 +252,10 @@ shape = SubResource("CapsuleShape2D_dqkch")
 [node name="attack_cooldown" type="Timer" parent="." unique_id=1782174673]
 wait_time = 0.5
 
+[node name="deal_attack_timer" type="Timer" parent="." unique_id=1175141135]
+wait_time = 0.5
+
 [connection signal="body_entered" from="Player hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="Player hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]

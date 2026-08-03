@@ -5,6 +5,8 @@ var zombie_attack_cooldown = true
 var health = 100
 var player_alive = true
 
+var attack_ip = false
+
 const speed = 80
 var current_direction = "none"
 
@@ -14,6 +16,7 @@ func _ready():
 func _physics_process(delta):
 	playermovement(delta)
 	zombie_attack()
+	attack()
 
 	if health <= 0:
 		player_alive = false
@@ -59,26 +62,30 @@ func play_anim(movement):
 		if movement == 1:
 			anim.play("side walk")
 		elif movement == 0:
-			anim.play("side idle")
+			if attack_ip == false:
+				anim.play("side idle")
 	if dir == "left":
 		anim.flip_h = true
 		if movement == 1:
 			anim.play("side walk")
 		elif movement == 0:
-			anim.play("side idle")
+			if attack_ip == false:
+				anim.play("side idle")
 			
 	if dir == "down":
 		anim.flip_h = false
 		if movement == 1:
 			anim.play("front walk")
 		elif movement == 0:
-			anim.play("front idle")
+			if attack_ip == false:
+				anim.play("front idle")
 	if dir == "up":
 		anim.flip_h = false
 		if movement == 1:
 			anim.play("back walk")
 		elif movement == 0:
-			anim.play("back idle")
+			if attack_ip == false:
+				anim.play("back idle")
 	
 	
 func player():
@@ -102,3 +109,33 @@ func zombie_attack():
 
 func _on_attack_cooldown_timeout():
 	zombie_attack_cooldown = true
+
+func attack():
+	var dir = current_direction
+	
+	if Input.is_action_just_pressed("attack"):
+		global.player_current_attack = true
+		attack_ip = true 
+		if dir == "right":
+			$AnimatedSprite2D.flip_h = false
+			$AnimatedSprite2D.play("side attack")
+			$deal_attack_timer.start()
+		if dir == "left":
+			$AnimatedSprite2D.flip_h = true
+			$AnimatedSprite2D.play("side attack")
+			$deal_attack_timer.start()
+		if dir == "down":
+			$AnimatedSprite2D.play("front attack")
+			$deal_attack_timer.start()
+		if dir == "up":
+			$AnimatedSprite2D.play("back attack")
+			$deal_attack_timer.start()
+		
+		
+
+func _on_deal_attack_timer_timeout():
+	$deal_attack_timer.stop()
+	global.player_current_attack = false
+	attack_ip = false
+	
+	
