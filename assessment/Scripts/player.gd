@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var zombie_inattack_range = false
 var zombie_attack_cooldown = true
-var health = 100
+var health = 200
 var player_alive = true
 
 var attack_ip = false
