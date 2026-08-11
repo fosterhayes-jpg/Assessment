@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://btvuh1y11i2yy"]
 
+[ext_resource type="Script" uid="uid://su1k647ln8lc" path="res://Scripts/world.gd" id="1_i7141"]
 [ext_resource type="Texture2D" uid="uid://d136g7ufuj3oy" path="res://Assets/Grass blocks and paths (1).png" id="1_rwgxs"]
 [ext_resource type="Texture2D" uid="uid://dsmok05k5kvft" path="res://icon.svg" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://b7t4hgf3qxubq" path="res://scenes/player.tscn" id="2_rwgxs"]
@@ -240,7 +241,11 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i7141")
 sources/1 = SubResource("TileSetAtlasSource_4mrxx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfnet"]
+size = Vector2(137, 64)
+
 [node name="world" type="Node2D" unique_id=319010386]
+script = ExtResource("1_i7141")
 
 [node name="tree" type="TileMapLayer" parent="." unique_id=1013902505]
 z_index = 5
@@ -265,3 +270,12 @@ position = Vector2(352, 232)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions" unique_id=476558468]
 polygon = PackedVector2Array(8, 0, 560, 0, 576, -64, 712, -64, 720, 0, 1152, 0, 1152, 640, 0, 640, 0, 0, 0, -40, -24, 0, -104, 704, 1216, 704, 1216, -8, 928, -136, 288, -104, 8, -32)
+
+[node name="cliffside_transition_point" type="Area2D" parent="." unique_id=874282978]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cliffside_transition_point" unique_id=1338850315]
+position = Vector2(640, -32)
+shape = SubResource("RectangleShape2D_qfnet")
+
+[connection signal="body_entered" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_entered"]
+[connection signal="body_exited" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_exited"]
