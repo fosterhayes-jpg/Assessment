@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="assessment"
-run/main_scene="uid://btvuh1y11i2yy"
+run/main_scene="uid://bvwbslhcyn42d"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
