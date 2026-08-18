@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bvwbslhcyn42d"]
 
+[ext_resource type="Script" uid="uid://cppho0jvvdn0n" path="res://Scripts/cliff_side.gd" id="1_0riok"]
 [ext_resource type="Texture2D" uid="uid://dsmok05k5kvft" path="res://icon.svg" id="1_jcley"]
 [ext_resource type="Texture2D" uid="uid://d136g7ufuj3oy" path="res://Assets/Grass blocks and paths (1).png" id="2_v3mbj"]
 [ext_resource type="Texture2D" uid="uid://bhexwrmyd63fr" path="res://Assets/Cliffs (1).png" id="3_ocn37"]
@@ -96,7 +97,25 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_te2g4")
 sources/1 = SubResource("TileSetAtlasSource_ll56v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygqrx"]
+size = Vector2(207, 64)
+
+[sub_resource type="GDScript" id="GDScript_71q3n"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="cliffside" type="Node2D" unique_id=552792617]
+script = ExtResource("1_0riok")
 
 [node name="tree" type="TileMapLayer" parent="." unique_id=1455096446]
 z_index = 5
@@ -121,4 +140,12 @@ position = Vector2(456, 288)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions" unique_id=988667424]
 polygon = PackedVector2Array(264, 168, 264, 568, 488, 640, 488, 704, 696, 704, 696, 640, 912, 640, 1000, 432, 976, 112, 680, 72, 288, 144, 784, -8, 1208, 168, 1208, 440, 1000, 736, 704, 808, 568, 776, 192, 600, 128, 376, 176, 176)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=109387650]
+[node name="cliffside_exitpoint" type="Area2D" parent="." unique_id=109387650]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cliffside_exitpoint" unique_id=1364027990]
+position = Vector2(592.5, 672)
+shape = SubResource("RectangleShape2D_ygqrx")
+script = SubResource("GDScript_71q3n")
+
+[connection signal="area_shape_entered" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_area_shape_entered"]
+[connection signal="area_shape_exited" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_area_shape_exited"]
