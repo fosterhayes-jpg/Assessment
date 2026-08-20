@@ -233,9 +233,9 @@ collision_layer = 3
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=61390193]
-position = Vector2(0, -19.505)
+position = Vector2(0, -18.505)
 sprite_frames = SubResource("SpriteFrames_fulsm")
-animation = &"back attack"
+animation = &"back idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84459100]
 position = Vector2(0, -11.385)
@@ -256,7 +256,7 @@ wait_time = 0.5
 wait_time = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2100460174]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 limit_left = 0
 limit_top = 0
 limit_right = 1152
