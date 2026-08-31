@@ -96,7 +96,7 @@ sources/1 = SubResource("TileSetAtlasSource_5q6pw")
 sources/2 = SubResource("TileSetAtlasSource_te2g4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygqrx"]
-size = Vector2(207, 64)
+size = Vector2(207, 72)
 
 [node name="cliffside" type="Node2D" unique_id=552792617]
 script = ExtResource("1_0riok")
@@ -119,16 +119,25 @@ position = Vector2(592, 568)
 [node name="collisions" type="StaticBody2D" parent="." unique_id=972251467]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions" unique_id=988667424]
-polygon = PackedVector2Array(264, 168, 264, 568, 488, 640, 488, 704, 696, 704, 696, 640, 912, 640, 1000, 432, 976, 112, 680, 72, 288, 144, 784, -8, 1208, 168, 1208, 440, 1000, 736, 704, 808, 568, 776, 192, 600, 128, 376, 176, 176)
+position = Vector2(8, -8)
+polygon = PackedVector2Array(296, 176, 296, 512, 488, 512, 488, 712, 680, 712, 680, 512, 904, 512, 904, 192, 304, 192, 304, 144, 784, -8, 1208, 168, 1208, 440, 1000, 736, 704, 808, 568, 776, 192, 600, 128, 376, 176, 176)
 
 [node name="cliffside_exitpoint" type="Area2D" parent="." unique_id=109387650]
 script = ExtResource("1_0riok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cliffside_exitpoint" unique_id=1364027990]
-position = Vector2(592.5, 672)
+position = Vector2(592.5, 668)
 shape = SubResource("RectangleShape2D_ygqrx")
 
 [node name="player" parent="." unique_id=739061269 instance=ExtResource("6_0riok")]
 position = Vector2(400, 264)
+
+[node name="Label" type="Label" parent="." unique_id=1393262278]
+offset_left = 328.0
+offset_top = 296.0
+offset_right = 468.0
+offset_bottom = 353.0
+text = "'space' attack
+'arrow keys' move"
 
 [connection signal="body_entered" from="cliffside_exitpoint" to="cliffside_exitpoint" method="_on_body_entered"]
