@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c7hlhk72m2hmx" path="res://scenes/zombie.tscn" id="3_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://dd6cih30c2jdb" path="res://Assets/single grass for cliff.png" id="4_qfnet"]
 [ext_resource type="Texture2D" uid="uid://bhexwrmyd63fr" path="res://Assets/Cliffs (1).png" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://b7t4hgf3qxubq" path="res://scenes/player.tscn" id="7_i7141"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfnet"]
 texture = ExtResource("2_k0juu")
@@ -127,6 +128,9 @@ polygon = PackedVector2Array(8, 0, 560, 0, 576, -64, 712, -64, 720, 0, 1152, 0, 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cliffside_transition_point" unique_id=1338850315]
 position = Vector2(640, -32)
 shape = SubResource("RectangleShape2D_qfnet")
+
+[node name="player" parent="." unique_id=739061269 instance=ExtResource("7_i7141")]
+position = Vector2(640, 40)
 
 [connection signal="body_entered" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_entered"]
 [connection signal="body_exited" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_exited"]
