@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bvwbslhcyn42d"]
 
 [ext_resource type="Script" uid="uid://cppho0jvvdn0n" path="res://Scripts/cliff_side.gd" id="1_0riok"]
-[ext_resource type="Texture2D" uid="uid://dsmok05k5kvft" path="res://icon.svg" id="1_jcley"]
+[ext_resource type="Texture2D" uid="uid://2b3tqofvr6f" path="res://Assets/Nature assets/Trees (1).png" id="2_ygqrx"]
 [ext_resource type="Texture2D" uid="uid://c0bnlmlga7dpn" path="res://Assets/Nature assets/Grass blocks and paths (1).png" id="3_ocn37"]
 [ext_resource type="Texture2D" uid="uid://8rmxg1jtxews" path="res://Assets/Nature assets/Cliffs (1).png" id="4_0riok"]
 [ext_resource type="Texture2D" uid="uid://byeucdp6llkwo" path="res://Assets/Nature assets/NewCliffs (1) (1).png" id="4_ygqrx"]
@@ -9,17 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://c7hlhk72m2hmx" path="res://scenes/zombie.tscn" id="5_ocn37"]
 [ext_resource type="PackedScene" uid="uid://b7t4hgf3qxubq" path="res://scenes/player.tscn" id="6_0riok"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygqrx"]
-texture = ExtResource("1_jcley")
-texture_region_size = Vector2i(64, 64)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pb76u"]
+texture = ExtResource("2_ygqrx")
+texture_region_size = Vector2i(64, 84)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.343281, 26.63752, 6.0645943, 27.52393, 6.8301315, 36.199707, 16.963898, 42, -24.588482, 42, -16.794264, 36.38757)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.795208, 31.229, -0.63726044, 34.41212, -2.2304153, 42, -11.8539505, 42)
 0:1/0 = 0
 1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_71q3n"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_ygqrx")
+tile_size = Vector2i(64, 84)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/1 = SubResource("TileSetAtlasSource_pb76u")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71q3n"]
 texture = ExtResource("3_ocn37")
@@ -103,6 +109,7 @@ script = ExtResource("1_0riok")
 
 [node name="tree" type="TileMapLayer" parent="." unique_id=1455096446]
 z_index = 5
+tile_map_data = PackedByteArray("AAAFAAMAAQABAAAAAAALAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_71q3n")
 
 [node name="ground" type="TileMapLayer" parent="." unique_id=1574254398]

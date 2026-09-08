@@ -20,5 +20,7 @@ func change_scene():
 
 
 func _on_body_entered(body: Node2D) -> void:
+	
 	if body.name == "player":
+		print("test a")
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
