@@ -17,4 +17,3 @@ func finish_changescenes():
 			current_scene = "cliff_side"
 		else:
 			current_scene = "world"
-		

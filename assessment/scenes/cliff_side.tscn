@@ -137,7 +137,7 @@ position = Vector2(592.5, 668)
 shape = SubResource("RectangleShape2D_ygqrx")
 
 [node name="player" parent="." unique_id=739061269 instance=ExtResource("6_0riok")]
-position = Vector2(400, 264)
+position = Vector2(400, 272)
 
 [node name="Label" type="Label" parent="." unique_id=1393262278]
 offset_left = 328.0

@@ -103,7 +103,7 @@ position = Vector2(640, -32)
 shape = SubResource("RectangleShape2D_qfnet")
 
 [node name="player" parent="." unique_id=739061269 instance=ExtResource("7_i7141")]
-position = Vector2(640, 40)
+position = Vector2(632, 32)
 
 [connection signal="body_entered" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_entered"]
 [connection signal="body_exited" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_exited"]
