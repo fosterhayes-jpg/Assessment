@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+var knockback: Vector2 = Vector2.ZERO
+var knockback_timer: float = 0.0
+
 var zombie_inattack_range = false
 var zombie_attack_cooldown = true
 var health = 200
@@ -9,6 +12,7 @@ var attack_ip = false
 
 const speed = 80
 var current_direction = "none"
+
 
 func _ready():
 	$AnimatedSprite2D.play("front idle")
@@ -138,3 +142,6 @@ func _on_deal_attack_timer_timeout():
 	global.player_current_attack = false
 	attack_ip = false
 	
+func apply_knockback(direction: Vector2, force: float, knockback_duration: float) -> void:
+	knockback = direction * force
+	knockback_timer = knockback_duration

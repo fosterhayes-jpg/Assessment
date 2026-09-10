@@ -121,7 +121,7 @@ tile_map_data = PackedByteArray("AAALABMAAQAAAAAAAAALABEAAQAAAAAAAAALABIAAQAAAAA
 tile_set = SubResource("TileSet_0hwt4")
 
 [node name="zombie" parent="." unique_id=437287189 instance=ExtResource("5_ocn37")]
-position = Vector2(592, 568)
+position = Vector2(592, 496)
 
 [node name="collisions" type="StaticBody2D" parent="." unique_id=972251467]
 
@@ -130,7 +130,6 @@ position = Vector2(8, -8)
 polygon = PackedVector2Array(296, 176, 296, 512, 488, 512, 488, 712, 680, 712, 680, 512, 904, 512, 904, 192, 304, 192, 304, 144, 784, -8, 1208, 168, 1208, 440, 1000, 736, 704, 808, 568, 776, 192, 600, 128, 376, 176, 176)
 
 [node name="cliffside_exitpoint" type="Area2D" parent="." unique_id=109387650]
-script = ExtResource("1_0riok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cliffside_exitpoint" unique_id=1364027990]
 position = Vector2(592.5, 668)
@@ -147,4 +146,4 @@ offset_bottom = 353.0
 text = "'space' attack
 'arrow keys' move"
 
-[connection signal="body_entered" from="cliffside_exitpoint" to="cliffside_exitpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_body_entered"]
