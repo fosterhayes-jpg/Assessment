@@ -10,15 +10,14 @@ config_version=5
 
 [application]
 
-config/name="assessment"
-run/main_scene="uid://fvxvo3c8wmic"
+config/name="assessment (Copy)"
+run/main_scene="uid://bvwbslhcyn42d"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 global="*uid://dibe2duqe0k05"
-BackgroundMusic="*uid://boqffxuo0qaf2"
 
 [input]
 

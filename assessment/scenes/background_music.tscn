@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://boqffxuo0qaf2"]
+
+[ext_resource type="AudioStream" uid="uid://c4uwa0wx8bx11" path="res://Assets/Extra tiems/New_Project.wav" id="1_0rulj"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1262652814]
+stream = ExtResource("1_0rulj")
+volume_db = 2.0
+autoplay = true
