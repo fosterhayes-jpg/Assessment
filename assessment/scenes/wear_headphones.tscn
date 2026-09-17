@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fvxvo3c8wmic"]
 
-[ext_resource type="Script" uid="uid://dinecpt8w41d6" path="res://scenes/wear_headphones.gd" id="1_q20oy"]
+[ext_resource type="Script" uid="uid://dinecpt8w41d6" path="res://Scripts/wear_headphones.gd" id="1_q20oy"]
 [ext_resource type="FontFile" uid="uid://m4oud3gmqah8" path="res://Assets/Extra tiems/noscary/NoScary-regular.ttf" id="2_q20oy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ic1s"]
@@ -44,7 +44,7 @@ theme_override_fonts/font = ExtResource("2_q20oy")
 theme_override_font_sizes/font_size = 80
 text = "Please wear headphones for the best experience"
 
-[node name="Button" type="Button" parent="." unique_id=1217636973]
+[node name="next" type="Button" parent="." unique_id=1217636973]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -65,4 +65,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3km65")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q20oy")
 text = "NEXT"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_button_pressed"]

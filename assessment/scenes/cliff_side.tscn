@@ -109,7 +109,6 @@ script = ExtResource("1_0riok")
 
 [node name="tree" type="TileMapLayer" parent="." unique_id=1455096446]
 z_index = 5
-tile_map_data = PackedByteArray("AAAFAAMAAQABAAAAAAALAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_71q3n")
 
 [node name="ground" type="TileMapLayer" parent="." unique_id=1574254398]
@@ -136,14 +135,6 @@ position = Vector2(592.5, 668)
 shape = SubResource("RectangleShape2D_ygqrx")
 
 [node name="player" parent="." unique_id=739061269 instance=ExtResource("6_0riok")]
-position = Vector2(400, 272)
-
-[node name="Label" type="Label" parent="." unique_id=1393262278]
-offset_left = 328.0
-offset_top = 296.0
-offset_right = 468.0
-offset_bottom = 353.0
-text = "'space' attack
-'arrow keys' move"
+position = Vector2(400, 264)
 
 [connection signal="body_entered" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_body_entered"]

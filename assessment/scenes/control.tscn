@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://by12jjdoarru0"]
 
 [ext_resource type="FontFile" uid="uid://m4oud3gmqah8" path="res://Assets/Extra tiems/noscary/NoScary-regular.ttf" id="1_5p55f"]
+[ext_resource type="Script" uid="uid://dch3tr8qs5ctq" path="res://Scripts/control.gd" id="1_r67kn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cr3o2"]
 bg_color = Color(0, 0, 0, 1)
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r67kn")
 
 [node name="Panel" type="Panel" parent="." unique_id=1528950833]
 layout_mode = 0
@@ -37,7 +39,7 @@ text = "Controls:
 'space' - attack
 'e' - collect"
 
-[node name="Button" type="Button" parent="Label" unique_id=1269237360]
+[node name="next" type="Button" parent="Label" unique_id=1269237360]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -57,3 +59,27 @@ theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_5p55f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r67kn")
 text = "NEXT"
+
+[node name="back" type="Button" parent="Label" unique_id=1900991690]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = 3.0
+offset_right = -512.0
+offset_bottom = 67.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.57254905, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p55f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r67kn")
+text = "BACK"
+
+[connection signal="pressed" from="Label/next" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Label/back" to="." method="_on_back_pressed"]

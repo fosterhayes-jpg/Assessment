@@ -92,7 +92,7 @@ radius = 80.0
 radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_httt1"]
-radius = 24.0
+radius = 30.331758
 
 [node name="zombie" type="CharacterBody2D" unique_id=437287189]
 script = ExtResource("1_httt1")
@@ -110,18 +110,24 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_aetfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333819796]
-position = Vector2(0, -14)
+position = Vector2(0, -8.765)
+scale = Vector2(0.645, 1.565)
 shape = SubResource("CircleShape2D_xepks")
 
 [node name="Zombie hitbox" type="Area2D" parent="." unique_id=1132874711]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombie hitbox" unique_id=295058866]
-position = Vector2(0, -14)
-scale = Vector2(1.055, 1.055)
+position = Vector2(0, -7.999999)
+scale = Vector2(0.485, 0.995)
 shape = SubResource("CircleShape2D_httt1")
 
 [node name="take_damage_cooldown" type="Timer" parent="." unique_id=1939871607]
 wait_time = 0.5
+
+[node name="healthbar" type="ProgressBar" parent="." unique_id=1708593531]
+offset_right = 4.0
+offset_bottom = 27.0
+scale = Vector2(0.15, 0.15)
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
