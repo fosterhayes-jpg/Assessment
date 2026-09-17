@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://by12jjdoarru0"]
 
+[ext_resource type="FontFile" uid="uid://m4oud3gmqah8" path="res://Assets/Extra tiems/noscary/NoScary-regular.ttf" id="1_5p55f"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cr3o2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p55f"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r67kn"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" unique_id=1212163896]
@@ -16,3 +24,36 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cr3o2")
+
+[node name="Label" type="Label" parent="." unique_id=905655862]
+layout_mode = 1
+offset_left = 64.0
+offset_right = 704.0
+offset_bottom = 509.0
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 124
+text = "Controls:
+'wasd' - movement
+'space' - attack
+'e' - collect"
+
+[node name="Button" type="Button" parent="Label" unique_id=1269237360]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = 3.0
+offset_right = 384.0
+offset_bottom = 67.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.57254905, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5p55f")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p55f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r67kn")
+text = "NEXT"

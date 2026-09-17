@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fvxvo3c8wmic"]
 
-[ext_resource type="FontFile" uid="uid://csmngx3po8526" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.otf" id="1_dkhcd"]
 [ext_resource type="Script" uid="uid://dinecpt8w41d6" path="res://scenes/wear_headphones.gd" id="1_q20oy"]
+[ext_resource type="FontFile" uid="uid://m4oud3gmqah8" path="res://Assets/Extra tiems/noscary/NoScary-regular.ttf" id="2_q20oy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ic1s"]
 bg_color = Color(0, 0, 0, 1)
@@ -40,7 +40,7 @@ offset_right = 188.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_dkhcd")
+theme_override_fonts/font = ExtResource("2_q20oy")
 theme_override_font_sizes/font_size = 80
 text = "Please wear headphones for the best experience"
 
@@ -59,10 +59,10 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.57254905, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_dkhcd")
+theme_override_fonts/font = ExtResource("2_q20oy")
 theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_3km65")
 theme_override_styles/hover = SubResource("StyleBoxFlat_q20oy")
-text = "Continue"
+text = "NEXT"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
