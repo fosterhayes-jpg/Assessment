@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bttax648vel8y"]
 
 [ext_resource type="FontFile" uid="uid://csmngx3po8526" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.otf" id="1_l6cm7"]
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="Script" uid="uid://clr1c8r67s1ok" path="res://Scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="FontFile" uid="uid://cerkdt37me6cc" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.woff" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://cu4gexj2gitdm" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.ttf" id="3_wu84c"]
 
@@ -74,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1935922954]
+[node name="start" type="Button" parent="VBoxContainer" unique_id=1935922954]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_l6cm7")
@@ -84,7 +84,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=669527466]
+[node name="settings" type="Button" parent="VBoxContainer" unique_id=669527466]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_bqqt6")
@@ -94,7 +94,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 text = "options"
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1583636197]
+[node name="exit" type="Button" parent="VBoxContainer" unique_id=1583636197]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_wu84c")
@@ -104,7 +104,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 text = "Exit "
 
-[node name="Label" type="Label" parent="." unique_id=829326302]
+[node name="title" type="Label" parent="." unique_id=829326302]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -122,6 +122,6 @@ theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 100
 text = "The Last Pixels"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

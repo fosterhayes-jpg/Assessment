@@ -109,7 +109,6 @@ script = ExtResource("1_0riok")
 
 [node name="tree" type="TileMapLayer" parent="." unique_id=1455096446]
 z_index = 5
-tile_map_data = PackedByteArray("AAAFAAMAAQABAAAAAAALAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_71q3n")
 
 [node name="ground" type="TileMapLayer" parent="." unique_id=1574254398]
@@ -130,21 +129,12 @@ position = Vector2(8, -8)
 polygon = PackedVector2Array(296, 176, 296, 512, 488, 512, 488, 712, 680, 712, 680, 512, 904, 512, 904, 192, 304, 192, 304, 144, 784, -8, 1208, 168, 1208, 440, 1000, 736, 704, 808, 568, 776, 192, 600, 128, 376, 176, 176)
 
 [node name="cliffside_exitpoint" type="Area2D" parent="." unique_id=109387650]
-script = ExtResource("1_0riok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cliffside_exitpoint" unique_id=1364027990]
 position = Vector2(592.5, 668)
 shape = SubResource("RectangleShape2D_ygqrx")
 
 [node name="player" parent="." unique_id=739061269 instance=ExtResource("6_0riok")]
-position = Vector2(400, 272)
+position = Vector2(400, 264)
 
-[node name="Label" type="Label" parent="." unique_id=1393262278]
-offset_left = 328.0
-offset_top = 296.0
-offset_right = 468.0
-offset_bottom = 353.0
-text = "'space' attack
-'arrow keys' move"
-
-[connection signal="body_entered" from="cliffside_exitpoint" to="cliffside_exitpoint" method="_on_body_entered"]
+[connection signal="body_entered" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_body_entered"]
