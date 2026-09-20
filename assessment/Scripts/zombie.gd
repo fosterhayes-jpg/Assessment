@@ -62,6 +62,8 @@ func _on_take_damage_cooldown_timeout():
 func update_health():
 	var healthbar = $healthbar
 	
+	healthbar.value = healthbar
+	
 	if health >= 60:
 		healthbar.visible = false
 	else:
