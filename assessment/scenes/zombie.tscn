@@ -131,6 +131,7 @@ offset_top = 18.07
 offset_right = 148.01501
 offset_bottom = 45.07
 scale = Vector2(0.15, 0.15)
+max_value = 60.0
 value = 60.0
 show_percentage = false
 
