@@ -2,6 +2,12 @@ extends Node
 
 var player_current_attack = false 
 
+var wheel_collected = false
+var wheel_used = false
+
+var fuel_collected = false
+var fuel_used = false
+
 var current_scene = "world" #world cliff_side
 var transition_scene = false
 
@@ -17,3 +23,4 @@ func finish_changescenes():
 			current_scene = "cliff_side"
 		else:
 			current_scene = "world"
+			

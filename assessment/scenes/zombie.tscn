@@ -125,9 +125,15 @@ shape = SubResource("CircleShape2D_httt1")
 wait_time = 0.5
 
 [node name="healthbar" type="ProgressBar" parent="." unique_id=1708593531]
-offset_right = 4.0
-offset_bottom = 27.0
+modulate = Color(1, 0, 0, 1)
+offset_left = -12.0
+offset_top = 18.07
+offset_right = 148.01501
+offset_bottom = 45.07
 scale = Vector2(0.15, 0.15)
+max_value = 60.0
+value = 60.0
+show_percentage = false
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

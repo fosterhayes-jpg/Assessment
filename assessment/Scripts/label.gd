@@ -6,7 +6,7 @@ signal sequence_finished
 @export var hold_time: float = 1.5
 @export var fade_time: float = 0.5
 @export var pause_between: float = 0.3
-@export var next_scene_path: String = "res://scenes/main_menu.tscn" # set this in the Inspector
+@export var next_scene_path: String = "res://scenes/main_menu.tscn"
 
 var paragraphs: Array[String] = []
 var paragraph_index: int = 0

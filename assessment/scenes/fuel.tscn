@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://sje6cw3xxs37"]
+
+[ext_resource type="Script" uid="uid://blrypc4a4hqum" path="res://Scripts/wheel.gd" id="1_vltxq"]
+[ext_resource type="Texture2D" uid="uid://teo166yirv34" path="res://Assets/Collectables/Car tire collectable.png" id="2_vf86o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c65p7"]
+atlas = ExtResource("2_vf86o")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b52vq"]
+atlas = ExtResource("2_vf86o")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drh0d"]
+atlas = ExtResource("2_vf86o")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gne1a"]
+atlas = ExtResource("2_vf86o")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3oduw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c65p7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b52vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drh0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gne1a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.8
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jchm1"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hm1pg"]
+
+[node name="wheel" type="CharacterBody2D" unique_id=1374669628]
+scale = Vector2(0.42, 0.42)
+script = ExtResource("1_vltxq")
+metadata/_edit_vertical_guides_ = [0.0]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246777290]
+sprite_frames = SubResource("SpriteFrames_3oduw")
+autoplay = "default"
+frame_progress = 0.27149722
+metadata/_edit_group_ = true
+
+[node name="pickable_area" type="Area2D" parent="." unique_id=1261196147]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area" unique_id=920736365]
+position = Vector2(0, 5.019999)
+scale = Vector2(2.645, 2.632)
+shape = SubResource("CircleShape2D_jchm1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=82264249]
+position = Vector2(0, 3.34)
+scale = Vector2(1.36, 1.36)
+shape = SubResource("CircleShape2D_hm1pg")
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]

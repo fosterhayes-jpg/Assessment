@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dwgs0tnpye52m"]
+
+[ext_resource type="Texture2D" uid="uid://dugthqte86eat" path="res://Assets/Town Assets/car design 1 final final.png" id="1_8ivgs"]
+[ext_resource type="Script" uid="uid://dg3xaj1pe8mw8" path="res://Scripts/truck.gd" id="1_w5yki"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ivgs"]
+
+[node name="truck" type="CharacterBody2D" unique_id=377065272]
+script = ExtResource("1_w5yki")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2120808801]
+scale = Vector2(1.83, 1.83)
+texture = ExtResource("1_8ivgs")
+
+[node name="give_item" type="Area2D" parent="." unique_id=1752253229]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="give_item" unique_id=349564878]
+position = Vector2(-10.545, -9.04)
+scale = Vector2(10.125, 10.125)
+shape = SubResource("CircleShape2D_8ivgs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1258100798]
+scale = Vector2(3.38, 3.38)
+polygon = PackedVector2Array(-7.1005917, -7.1005917, -7.1005917, -9.467456, -2.366864, -11.83432, 0, -11.83432, 4.733728, -14.201183, 11.83432, -11.83432, 11.83432, -7.1005917, -7.1005917, 9.467456, -18.934912, 2.366864, -16.568048, -2.366864)
+
+[connection signal="body_entered" from="give_item" to="." method="_on_give_item_body_entered"]
+[connection signal="body_exited" from="give_item" to="." method="_on_give_item_body_exited"]
