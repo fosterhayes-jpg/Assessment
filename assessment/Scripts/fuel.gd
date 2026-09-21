@@ -2,9 +2,10 @@ extends CharacterBody2D
 
 var player_in_area = false
 
-#collecting wheel
+
+#picking up fuel
 func _ready() -> void:
-	if global.wheel_collected:
+	if global.fuel_collected:
 		queue_free()
 
 func _process(delta: float) -> void:
@@ -13,9 +14,8 @@ func _process(delta: float) -> void:
 	else:
 		$Label.visible = false
 		
-		
 	if player_in_area and Input.is_action_just_pressed("pickup"):
-		global.wheel_collected = true
+		global.fuel_collected = true
 		queue_free()
 		
 		

@@ -2,11 +2,15 @@ extends Node
 
 var player_current_attack = false 
 
+
+#is item picked up has item been used
 var wheel_collected = false
 var wheel_used = false
 
 var fuel_collected = false
 var fuel_used = false
+
+
 
 var current_scene = "world" #world cliff_side
 var transition_scene = false

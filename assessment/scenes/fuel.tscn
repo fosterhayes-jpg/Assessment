@@ -1,38 +1,38 @@
 [gd_scene format=3 uid="uid://sje6cw3xxs37"]
 
-[ext_resource type="Script" uid="uid://blrypc4a4hqum" path="res://Scripts/wheel.gd" id="1_vltxq"]
-[ext_resource type="Texture2D" uid="uid://teo166yirv34" path="res://Assets/Collectables/Car tire collectable.png" id="2_vf86o"]
+[ext_resource type="Script" uid="uid://12lrqm36xdsj" path="res://Scripts/fuel.gd" id="1_vltxq"]
+[ext_resource type="Texture2D" uid="uid://bs8qkssp3xf2o" path="res://Assets/Collectables/Fuel can collectable.png" id="2_vltxq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c65p7"]
-atlas = ExtResource("2_vf86o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf86o"]
+atlas = ExtResource("2_vltxq")
 region = Rect2(0, 0, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b52vq"]
-atlas = ExtResource("2_vf86o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4cwf"]
+atlas = ExtResource("2_vltxq")
 region = Rect2(96, 0, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_drh0d"]
-atlas = ExtResource("2_vf86o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_col1c"]
+atlas = ExtResource("2_vltxq")
 region = Rect2(0, 96, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gne1a"]
-atlas = ExtResource("2_vf86o")
-region = Rect2(96, 96, 96, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6svm"]
+atlas = ExtResource("2_vltxq")
+region = Rect2(96, 0, 96, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3oduw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c65p7")
+"texture": SubResource("AtlasTexture_vf86o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b52vq")
+"texture": SubResource("AtlasTexture_e4cwf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_drh0d")
+"texture": SubResource("AtlasTexture_col1c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gne1a")
+"texture": SubResource("AtlasTexture_x6svm")
 }],
 "loop": true,
 "name": &"default",
@@ -52,7 +52,7 @@ metadata/_edit_vertical_guides_ = [0.0]
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1246777290]
 sprite_frames = SubResource("SpriteFrames_3oduw")
 autoplay = "default"
-frame_progress = 0.27149722
+frame_progress = 0.9600634
 metadata/_edit_group_ = true
 
 [node name="pickable_area" type="Area2D" parent="." unique_id=1261196147]
@@ -67,6 +67,14 @@ metadata/_edit_group_ = true
 position = Vector2(0, 3.34)
 scale = Vector2(1.36, 1.36)
 shape = SubResource("CircleShape2D_hm1pg")
+
+[node name="Label" type="Label" parent="." unique_id=1604806258]
+offset_left = -38.09524
+offset_top = 38.095234
+offset_right = 48.90476
+offset_bottom = 61.095234
+theme_override_font_sizes/font_size = 10
+text = "press 'e' to pickup"
 
 [connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
 [connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]

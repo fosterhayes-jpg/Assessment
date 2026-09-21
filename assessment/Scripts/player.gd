@@ -25,6 +25,7 @@ func _physics_process(delta):
 		print("player has been killed")
 		self.queue_free()
 
+#player movement and animation
 func playermovement(delta):
 	
 	if Input.is_action_pressed("ui_right"):
@@ -140,6 +141,7 @@ func _on_deal_attack_timer_timeout():
 	attack_ip = false
 
 
+#player healthbar
 func update_health():
 	var healthbar = $healthbar
 	

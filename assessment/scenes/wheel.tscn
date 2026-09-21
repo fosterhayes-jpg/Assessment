@@ -68,5 +68,13 @@ position = Vector2(0, 3.34)
 scale = Vector2(1.36, 1.36)
 shape = SubResource("CircleShape2D_hm1pg")
 
+[node name="Label" type="Label" parent="." unique_id=1021161066]
+offset_left = -38.09524
+offset_top = 38.095234
+offset_right = 48.90476
+offset_bottom = 61.095234
+theme_override_font_sizes/font_size = 10
+text = "press 'e' to pickup"
+
 [connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
 [connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]

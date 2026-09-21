@@ -23,5 +23,14 @@ shape = SubResource("CircleShape2D_8ivgs")
 scale = Vector2(3.38, 3.38)
 polygon = PackedVector2Array(-7.1005917, -7.1005917, -7.1005917, -9.467456, -2.366864, -11.83432, 0, -11.83432, 4.733728, -14.201183, 11.83432, -11.83432, 11.83432, -7.1005917, -7.1005917, 9.467456, -18.934912, 2.366864, -16.568048, -2.366864)
 
+[node name="Label" type="Label" parent="." unique_id=943634235]
+offset_left = -40.0
+offset_top = 32.0
+offset_right = 47.0
+offset_bottom = 55.0
+scale = Vector2(0.605, 0.605)
+theme_override_font_sizes/font_size = 10
+text = "press 'e' to install"
+
 [connection signal="body_entered" from="give_item" to="." method="_on_give_item_body_entered"]
 [connection signal="body_exited" from="give_item" to="." method="_on_give_item_body_exited"]

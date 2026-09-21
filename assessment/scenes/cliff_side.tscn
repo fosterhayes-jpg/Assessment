@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c7hlhk72m2hmx" path="res://scenes/zombie.tscn" id="5_ocn37"]
 [ext_resource type="PackedScene" uid="uid://b7t4hgf3qxubq" path="res://scenes/player.tscn" id="6_0riok"]
 [ext_resource type="PackedScene" uid="uid://bx65fjob0wv7g" path="res://scenes/wheel.tscn" id="9_71q3n"]
+[ext_resource type="PackedScene" uid="uid://sje6cw3xxs37" path="res://scenes/fuel.tscn" id="10_axhr3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pb76u"]
 texture = ExtResource("2_ygqrx")
@@ -140,5 +141,8 @@ shape = SubResource("RectangleShape2D_ygqrx")
 
 [node name="player" parent="." unique_id=739061269 instance=ExtResource("6_0riok")]
 position = Vector2(400, 264)
+
+[node name="wheel2" parent="." unique_id=802552513 instance=ExtResource("10_axhr3")]
+position = Vector2(497, 336)
 
 [connection signal="body_entered" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_body_entered"]
