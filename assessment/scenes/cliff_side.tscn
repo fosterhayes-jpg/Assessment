@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b7t4hgf3qxubq" path="res://scenes/player.tscn" id="6_0riok"]
 [ext_resource type="PackedScene" uid="uid://bx65fjob0wv7g" path="res://scenes/wheel.tscn" id="9_71q3n"]
 [ext_resource type="PackedScene" uid="uid://sje6cw3xxs37" path="res://scenes/fuel.tscn" id="10_axhr3"]
+[ext_resource type="PackedScene" uid="uid://78a26eufqwm7" path="res://scenes/steering_wheel.tscn" id="11_pb76u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pb76u"]
 texture = ExtResource("2_ygqrx")
@@ -144,5 +145,8 @@ position = Vector2(400, 264)
 
 [node name="wheel2" parent="." unique_id=802552513 instance=ExtResource("10_axhr3")]
 position = Vector2(497, 336)
+
+[node name="steering_wheel" parent="." unique_id=798875530 instance=ExtResource("11_pb76u")]
+position = Vector2(568, 344)
 
 [connection signal="body_entered" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_body_entered"]

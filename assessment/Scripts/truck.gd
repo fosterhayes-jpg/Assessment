@@ -24,6 +24,13 @@ func _process(delta: float) -> void:
 			print("fuel put on truck")
 		elif not global.fuel_collected:
 			print("You need fuel")
+			
+	if player_in_area and Input.is_action_just_pressed("pickup"):
+		if global.steering_wheel_collected and not global.steering_wheel_used:
+			global.steering_wheel_used = true
+			print("steering wheel put on truck")
+		elif not global.steering_wheel_collected:
+			print("You need steering wheel")
 
 func _on_give_item_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
