@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var audio = $"../fixing"
 var player_in_area = false
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func _process(delta: float) -> void:
 		if global.wheel_collected and not global.wheel_used:
 			global.wheel_used = true
 			print("Wheel put on truck")
+			audio.play()
 		elif not global.wheel_collected:
 			print("You need a wheel")
 			
@@ -22,6 +24,7 @@ func _process(delta: float) -> void:
 		if global.fuel_collected and not global.fuel_used:
 			global.fuel_used = true
 			print("fuel put on truck")
+			audio.play()
 		elif not global.fuel_collected:
 			print("You need fuel")
 			
@@ -29,6 +32,7 @@ func _process(delta: float) -> void:
 		if global.steering_wheel_collected and not global.steering_wheel_used:
 			global.steering_wheel_used = true
 			print("steering wheel put on truck")
+			audio.play()
 		elif not global.steering_wheel_collected:
 			print("You need steering wheel")
 

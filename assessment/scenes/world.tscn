@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://byeucdp6llkwo" path="res://Assets/Nature assets/NewCliffs (1) (1).png" id="4_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://dwgs0tnpye52m" path="res://scenes/truck.tscn" id="7_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://b7t4hgf3qxubq" path="res://scenes/player.tscn" id="7_i7141"]
+[ext_resource type="AudioStream" uid="uid://bo7ruo1xeixmn" path="res://Assets/Extra tiems/New_Project (1).wav" id="8_4mrxx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r4gi"]
 texture = ExtResource("2_qfnet")
@@ -108,6 +109,9 @@ position = Vector2(624, 40)
 
 [node name="truck" parent="." unique_id=377065272 instance=ExtResource("7_4mrxx")]
 position = Vector2(784, 136)
+
+[node name="fixing" type="AudioStreamPlayer2D" parent="." unique_id=427531953]
+stream = ExtResource("8_4mrxx")
 
 [connection signal="body_entered" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_entered"]
 [connection signal="body_exited" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_exited"]
