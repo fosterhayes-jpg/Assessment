@@ -1,8 +1,7 @@
 extends Node
 
-var player_current_attack = false 
-
-
+var player_current_attack = false
+ 
 #is item picked up has item been used
 var wheel_collected = false
 var wheel_used = false
@@ -21,6 +20,8 @@ var player_exit_cliffside_posx = 400
 var player_exit_cliffside_posy = 272
 var player_start_posx = 0
 var player_start_posy = 0
+var player_exit_world_posx = 640
+var player_exit_world_posy = 48
 
 func finish_changescenes():
 	if transition_scene == true:

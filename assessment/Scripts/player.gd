@@ -10,6 +10,9 @@ var attack_ip = false
 const speed = 80
 var current_direction = "none"
 
+@onready var label: Label = $Camera2D/CanvasLayer/Label
+
+
 func _ready():
 	$AnimatedSprite2D.play("front idle")
 
@@ -18,7 +21,7 @@ func _physics_process(delta):
 	zombie_attack()
 	attack()
 	update_health()
-
+	check_collectables()
 	if health <= 0:
 		player_alive = false
 		health = 0 
@@ -132,14 +135,11 @@ func attack():
 		if dir == "up":
 			$AnimatedSprite2D.play("back attack")
 			$deal_attack_timer.start()
-		
-		
 
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	global.player_current_attack = false
 	attack_ip = false
-
 
 #player healthbar
 func update_health():
@@ -151,10 +151,6 @@ func update_health():
 		healthbar.visible = false
 	else: 
 		healthbar.visible = true
-		
-
-
-
 
 func _on_regin_timer_timeout() -> void:
 	if health < 100:
@@ -164,6 +160,13 @@ func _on_regin_timer_timeout() -> void:
 	if health <= 0:
 		health = 0
 	
+func check_collectables():
+	var num_collected = 0
+	if global.fuel_collected == true:
+		num_collected += 1
+	
+	
+	label.text = str(num_collected) + "/8 parts collected"
 	
 	
 	

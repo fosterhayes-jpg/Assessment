@@ -258,7 +258,6 @@ scale = Vector2(1.015, 1.015)
 shape = SubResource("CapsuleShape2D_dqkch")
 
 [node name="attack_cooldown" type="Timer" parent="." unique_id=1782174673]
-wait_time = 0.5
 
 [node name="deal_attack_timer" type="Timer" parent="." unique_id=1175141135]
 wait_time = 0.5
@@ -273,6 +272,15 @@ limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1801679813]
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer" unique_id=119321314]
+offset_left = 1000.0
+offset_top = 8.0
+offset_right = 1143.0
+offset_bottom = 57.0
+text = "0/8 parts collected"
 
 [node name="healthbar" type="ProgressBar" parent="." unique_id=710223516]
 modulate = Color(0.36862746, 0.84313726, 0.22745098, 1)
@@ -291,7 +299,7 @@ scale = Vector2(0.15, 0.15)
 show_percentage = false
 
 [node name="regin_timer" type="Timer" parent="." unique_id=1608443864]
-wait_time = 5.0
+wait_time = 2.5
 autostart = true
 
 [connection signal="body_entered" from="Player hitbox" to="." method="_on_player_hitbox_body_entered"]

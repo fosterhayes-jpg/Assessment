@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bcnj2g20huac5"]
+
+[ext_resource type="Script" uid="uid://u7vsk4dnfoih" path="res://Scripts/zombie.gd" id="1_88orx"]
+[ext_resource type="Texture2D" uid="uid://dsmok05k5kvft" path="res://icon.svg" id="2_8pern"]
+[ext_resource type="Texture2D" uid="uid://bwr2fdipwnu5e" path="res://Assets/Enemy/zombie 2 Idle and wak down (2).png" id="3_88orx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_httt1"]
+atlas = ExtResource("2_8pern")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xepks"]
+atlas = ExtResource("2_8pern")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pern"]
+atlas = ExtResource("3_88orx")
+region = Rect2(0, 0, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbf5v"]
+atlas = ExtResource("3_88orx")
+region = Rect2(42, 0, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsmop"]
+atlas = ExtResource("3_88orx")
+region = Rect2(84, 0, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rasq"]
+atlas = ExtResource("3_88orx")
+region = Rect2(0, 72, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys50x"]
+atlas = ExtResource("3_88orx")
+region = Rect2(42, 72, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41yot"]
+atlas = ExtResource("3_88orx")
+region = Rect2(84, 72, 42, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh1gr"]
+atlas = ExtResource("3_88orx")
+region = Rect2(0, 144, 42, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fthk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_httt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xepks")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pern")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbf5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsmop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rasq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys50x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41yot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh1gr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aetfh"]
+radius = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xepks"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_httt1"]
+radius = 30.331758
+
+[node name="zombie" type="CharacterBody2D" unique_id=437287189]
+script = ExtResource("1_88orx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=10617456]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_3fthk")
+animation = &"idle"
+
+[node name="detection_area" type="Area2D" parent="." unique_id=1340752056]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area" unique_id=595520935]
+shape = SubResource("CircleShape2D_aetfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333819796]
+position = Vector2(0, -8.765)
+scale = Vector2(0.645, 1.565)
+shape = SubResource("CircleShape2D_xepks")
+
+[node name="Zombie hitbox" type="Area2D" parent="." unique_id=1132874711]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zombie hitbox" unique_id=295058866]
+position = Vector2(0, -7.999999)
+scale = Vector2(0.485, 0.995)
+shape = SubResource("CircleShape2D_httt1")
+
+[node name="take_damage_cooldown" type="Timer" parent="." unique_id=1939871607]
+wait_time = 0.5
+
+[node name="healthbar" type="ProgressBar" parent="." unique_id=1708593531]
+modulate = Color(1, 0, 0, 1)
+offset_left = -12.0
+offset_top = 18.07
+offset_right = 148.01501
+offset_bottom = 45.07
+scale = Vector2(0.15, 0.15)
+max_value = 60.0
+value = 60.0
+show_percentage = false
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Zombie hitbox" to="." method="_on_zombie_hitbox_body_entered"]
+[connection signal="body_exited" from="Zombie hitbox" to="." method="_on_zombie_hitbox_body_exited"]
+[connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
