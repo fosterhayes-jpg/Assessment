@@ -164,23 +164,15 @@ func check_collectables():
 	var num_collected = 0
 	if global.fuel_collected == true:
 		num_collected += 1
+	if global.battery_collected == true:
+		num_collected += 1
+	if global.wheel_collected == true:
+		num_collected += 1
+	if global.brake_collected == true:
+		num_collected += 1
+	if global.steering_wheel_collected == true:
+		num_collected += 1
 	
 	
-	label.text = str(num_collected) + "/8 parts collected"
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	label.text = str(num_collected) + "/7 parts collected"
 	

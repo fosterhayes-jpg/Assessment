@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://c7hlhk72m2hmx" path="res://scenes/zombie.tscn" id="5_ocn37"]
 [ext_resource type="PackedScene" uid="uid://b7t4hgf3qxubq" path="res://scenes/player.tscn" id="6_0riok"]
 [ext_resource type="PackedScene" uid="uid://sje6cw3xxs37" path="res://scenes/fuel.tscn" id="10_axhr3"]
+[ext_resource type="PackedScene" uid="uid://6g6xkn713uef" path="res://scenes/brake_disc.tscn" id="11_5q6pw"]
 [ext_resource type="PackedScene" uid="uid://bcnj2g20huac5" path="res://scenes/zombie1.tscn" id="12_5q6pw"]
+[ext_resource type="PackedScene" uid="uid://ddctqtn71m77l" path="res://scenes/battery.tscn" id="12_te2g4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_axhr3"]
 texture = ExtResource("2_ygqrx")
@@ -160,5 +162,11 @@ position = Vector2(592, 520)
 position = Vector2(592, 520)
 
 [node name="zombie8" parent="zombies" unique_id=1691632323 instance=ExtResource("12_5q6pw")]
+
+[node name="brake_disc" parent="." unique_id=1039852450 instance=ExtResource("11_5q6pw")]
+position = Vector2(432, 320)
+
+[node name="battery" parent="." unique_id=3910594 instance=ExtResource("12_te2g4")]
+position = Vector2(472, 320)
 
 [connection signal="body_entered" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_body_entered"]

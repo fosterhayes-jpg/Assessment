@@ -107,9 +107,6 @@ polygon = PackedVector2Array(8, 0, 560, 0, 576, -64, 712, -64, 720, 0, 1152, 0, 
 position = Vector2(640, -32)
 shape = SubResource("RectangleShape2D_qfnet")
 
-[node name="truck" parent="." unique_id=377065272 instance=ExtResource("7_4mrxx")]
-position = Vector2(784, 136)
-
 [node name="fixing" type="AudioStreamPlayer2D" parent="." unique_id=427531953]
 stream = ExtResource("8_4mrxx")
 
@@ -119,7 +116,7 @@ stream = ExtResource("8_4mrxx")
 position = Vector2(696, 160)
 
 [node name="zombie2" parent="zombies" unique_id=564294897 instance=ExtResource("3_4wyf3")]
-position = Vector2(728, 96)
+position = Vector2(712, 80)
 
 [node name="zombie4" parent="zombies" unique_id=468697812 instance=ExtResource("9_7r4gi")]
 position = Vector2(744, 216)
@@ -192,13 +189,16 @@ position = Vector2(152, 176)
 position = Vector2(696, 160)
 
 [node name="zombie34" parent="zombies" unique_id=1863136499 instance=ExtResource("3_4wyf3")]
-position = Vector2(728, 96)
+position = Vector2(720, 88)
 
 [node name="zombie35" parent="zombies" unique_id=1230238907 instance=ExtResource("9_7r4gi")]
 position = Vector2(744, 216)
 
 [node name="zombie36" parent="zombies" unique_id=111321218 instance=ExtResource("9_7r4gi")]
 position = Vector2(392, 360)
+
+[node name="truck" parent="." unique_id=377065272 instance=ExtResource("7_4mrxx")]
+position = Vector2(872, 144)
 
 [node name="wheel" parent="." unique_id=1374669628 instance=ExtResource("10_e3hyu")]
 position = Vector2(256, 536)

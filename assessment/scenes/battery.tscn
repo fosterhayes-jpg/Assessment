@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ddctqtn71m77l"]
+
+[ext_resource type="Script" uid="uid://d13cf2i3ml64n" path="res://Scripts/battery.gd" id="1_3payw"]
+[ext_resource type="Texture2D" uid="uid://cd642s3l7qomg" path="res://Assets/Collectables/Car battery collectable.png" id="1_cumlu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3payw"]
+atlas = ExtResource("1_cumlu")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsvkx"]
+atlas = ExtResource("1_cumlu")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkobt"]
+atlas = ExtResource("1_cumlu")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd5gn"]
+atlas = ExtResource("1_cumlu")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3payw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3payw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsvkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkobt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd5gn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.8
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsvkx"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kkobt"]
+
+[node name="battery" type="CharacterBody2D" unique_id=3910594]
+scale = Vector2(0.31, 0.31)
+script = ExtResource("1_3payw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1634333129]
+sprite_frames = SubResource("SpriteFrames_3payw")
+autoplay = "default"
+metadata/_edit_group_ = true
+
+[node name="pickable_area" type="Area2D" parent="." unique_id=1467348905]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area" unique_id=192006983]
+position = Vector2(0, 5.019999)
+scale = Vector2(2.645, 2.632)
+shape = SubResource("CircleShape2D_lsvkx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=779886129]
+position = Vector2(0, 3.34)
+scale = Vector2(1.36, 1.36)
+shape = SubResource("CircleShape2D_kkobt")
+
+[node name="Label" type="Label" parent="." unique_id=486056099]
+offset_left = -38.09524
+offset_top = 38.095234
+offset_right = 48.90476
+offset_bottom = 61.095234
+theme_override_font_sizes/font_size = 10
+text = "press 'e' to pickup"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]

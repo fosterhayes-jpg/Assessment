@@ -12,6 +12,15 @@ var fuel_used = false
 var steering_wheel_collected = false
 var steering_wheel_used = false
 
+var brake_collected = false
+var brake_used = false
+
+var battery_collected = false
+var battery_used = false
+
+var oil_collected = false
+var oil_used = false
+
 
 var current_scene = "world" #world cliff_side
 var transition_scene = false

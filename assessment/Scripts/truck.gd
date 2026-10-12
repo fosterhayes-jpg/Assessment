@@ -36,6 +36,30 @@ func _process(delta: float) -> void:
 		elif not global.steering_wheel_collected:
 			print("You need steering wheel")
 
+	if player_in_area and Input.is_action_just_pressed("pickup"):
+		if global.brake_collected and not global.brake_used:
+			global.brake_used = true
+			print("brake disc put on truck")
+			audio.play()
+		elif not global.wheel_collected:
+			print("You need a brake disc")
+			
+	if player_in_area and Input.is_action_just_pressed("pickup"):
+		if global.battery_collected and not global.battery_used:
+			global.battery_used = true
+			print("battery put on truck")
+			audio.play()
+		elif not global.oil_collected:
+			print("You need a battery")
+			
+	if player_in_area and Input.is_action_just_pressed("pickup"):
+		if global.oil_collected and not global.oil_used:
+			global.oil_used = true
+			print("battery put on truck")
+			audio.play()
+		elif not global._collected:
+			print("You need a battery")
+
 func _on_give_item_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = true

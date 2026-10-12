@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dacrpe6t4ln70"]
+
+[ext_resource type="Script" uid="uid://dpnnf2vqci8pr" path="res://Scripts/oil.gd" id="1_vcmh2"]
+[ext_resource type="Texture2D" uid="uid://b4ux2cmswr1oq" path="res://Assets/Collectables/Oil collectable.png" id="2_3hyjc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mss81"]
+atlas = ExtResource("2_3hyjc")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oll5m"]
+atlas = ExtResource("2_3hyjc")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8skr"]
+atlas = ExtResource("2_3hyjc")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyexc"]
+atlas = ExtResource("2_3hyjc")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o1kxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mss81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oll5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8skr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyexc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.8
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbi8y"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8qkb"]
+
+[node name="oil" type="CharacterBody2D" unique_id=423526526]
+scale = Vector2(0.425, 0.425)
+script = ExtResource("1_vcmh2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1136905133]
+sprite_frames = SubResource("SpriteFrames_o1kxd")
+autoplay = "default"
+metadata/_edit_group_ = true
+
+[node name="pickable_area" type="Area2D" parent="." unique_id=1290557004]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area" unique_id=2104533664]
+position = Vector2(0, 5.019999)
+scale = Vector2(2.645, 2.632)
+shape = SubResource("CircleShape2D_bbi8y")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1274077828]
+position = Vector2(0, 3.34)
+scale = Vector2(1.36, 1.36)
+shape = SubResource("CircleShape2D_l8qkb")
+
+[node name="Label" type="Label" parent="." unique_id=827633834]
+offset_left = -38.09524
+offset_top = 38.095234
+offset_right = 48.90476
+offset_bottom = 61.095234
+theme_override_font_sizes/font_size = 10
+text = "press 'e' to pickup"
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]

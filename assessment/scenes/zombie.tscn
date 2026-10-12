@@ -88,8 +88,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_aetfh"]
 radius = 80.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xepks"]
-radius = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xepks"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_httt1"]
 radius = 30.331758
@@ -111,8 +110,8 @@ shape = SubResource("CircleShape2D_aetfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333819796]
 position = Vector2(0, -8.765)
-scale = Vector2(0.645, 1.565)
-shape = SubResource("CircleShape2D_xepks")
+scale = Vector2(0.905, 1.615)
+shape = SubResource("CapsuleShape2D_xepks")
 
 [node name="Zombie hitbox" type="Area2D" parent="." unique_id=1132874711]
 
