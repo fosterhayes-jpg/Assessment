@@ -45,7 +45,7 @@ radius = 24.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_l8qkb"]
 
 [node name="oil" type="CharacterBody2D" unique_id=423526526]
-scale = Vector2(0.425, 0.425)
+scale = Vector2(0.375, 0.375)
 script = ExtResource("1_vcmh2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1136905133]

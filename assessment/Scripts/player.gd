@@ -22,6 +22,7 @@ func _physics_process(delta):
 	attack()
 	update_health()
 	check_collectables()
+	check_used_parts()
 	if health <= 0:
 		player_alive = false
 		health = 0 
@@ -172,7 +173,29 @@ func check_collectables():
 		num_collected += 1
 	if global.steering_wheel_collected == true:
 		num_collected += 1
-	
+	if global.oil_collected == true:
+		num_collected += 1
+	if global.engine_collected == true:
+		num_collected += 1
 	
 	label.text = str(num_collected) + "/7 parts collected"
 	
+func check_used_parts():
+	var num_used = 0
+	if global.fuel_used == true:
+		num_used += 1
+	if global.battery_used == true:
+		num_used += 1
+	if global.wheel_used == true:
+		num_used += 1
+	if global.brake_used == true:
+		num_used += 1
+	if global.steering_wheel_used == true:
+		num_used += 1
+	if global.oil_used == true:
+		num_used += 1
+	if global.engine_used == true:
+		num_used += 1
+	
+	if num_used == 7:
+		get_tree().change_scene_to_file("res://scenes/end_game_scene.tscn")

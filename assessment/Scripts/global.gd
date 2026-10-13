@@ -21,6 +21,9 @@ var battery_used = false
 var oil_collected = false
 var oil_used = false
 
+var engine_collected = false
+var engine_used = false
+
 
 var current_scene = "world" #world cliff_side
 var transition_scene = false

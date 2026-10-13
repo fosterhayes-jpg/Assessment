@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://6g6xkn713uef" path="res://scenes/brake_disc.tscn" id="11_5q6pw"]
 [ext_resource type="PackedScene" uid="uid://bcnj2g20huac5" path="res://scenes/zombie1.tscn" id="12_5q6pw"]
 [ext_resource type="PackedScene" uid="uid://ddctqtn71m77l" path="res://scenes/battery.tscn" id="12_te2g4"]
+[ext_resource type="PackedScene" uid="uid://dacrpe6t4ln70" path="res://scenes/oil.tscn" id="13_te2g4"]
+[ext_resource type="PackedScene" uid="uid://mkecjta7ua24" path="res://scenes/engine.tscn" id="14_f2b6w"]
+[ext_resource type="PackedScene" uid="uid://78a26eufqwm7" path="res://scenes/steering_wheel.tscn" id="15_siq6e"]
+[ext_resource type="PackedScene" uid="uid://bx65fjob0wv7g" path="res://scenes/wheel.tscn" id="16_xtcm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_axhr3"]
 texture = ExtResource("2_ygqrx")
@@ -139,7 +143,7 @@ shape = SubResource("RectangleShape2D_ygqrx")
 position = Vector2(320, 496)
 
 [node name="wheel" parent="." unique_id=1374669628 instance=ExtResource("10_axhr3")]
-position = Vector2(495.99997, 263.99997)
+position = Vector2(504, 360.00003)
 
 [node name="zombies" type="Node" parent="." unique_id=1986140924]
 
@@ -168,5 +172,17 @@ position = Vector2(432, 320)
 
 [node name="battery" parent="." unique_id=3910594 instance=ExtResource("12_te2g4")]
 position = Vector2(472, 320)
+
+[node name="oil" parent="." unique_id=423526526 instance=ExtResource("13_te2g4")]
+position = Vector2(392, 304)
+
+[node name="engine" parent="." unique_id=164399511 instance=ExtResource("14_f2b6w")]
+position = Vector2(520, 312)
+
+[node name="steering_wheel" parent="." unique_id=356195588 instance=ExtResource("15_siq6e")]
+position = Vector2(408, 352)
+
+[node name="wheel2" parent="." unique_id=1159676338 instance=ExtResource("16_xtcm8")]
+position = Vector2(464, 360)
 
 [connection signal="body_entered" from="cliffside_exitpoint" to="." method="_on_cliffside_exitpoint_body_entered"]
