@@ -27,7 +27,7 @@ func _physics_process(delta):
 		player_alive = false
 		health = 0 
 		print("player has been killed")
-		self.queue_free()
+		get_tree().change_scene_to_file("res://scenes/cliff_side.tscn")
 
 #player movement and animation
 func playermovement(delta):
@@ -181,6 +181,7 @@ func check_collectables():
 	label.text = str(num_collected) + "/7 parts collected"
 	
 func check_used_parts():
+		
 	var num_used = 0
 	if global.fuel_used == true:
 		num_used += 1
@@ -199,3 +200,4 @@ func check_used_parts():
 	
 	if num_used == 7:
 		get_tree().change_scene_to_file("res://scenes/end_game_scene.tscn")
+		

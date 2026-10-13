@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://csmngx3po8526" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.otf" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://clr1c8r67s1ok" path="res://Scripts/main_menu.gd" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://d24a5e73bouyl" path="res://Assets/Menu assets/Cabin backround (1).png" id="2_8ln24"]
 [ext_resource type="FontFile" uid="uid://cerkdt37me6cc" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.woff" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://cu4gexj2gitdm" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.ttf" id="3_wu84c"]
 
@@ -58,6 +59,11 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l6cm7")
+
+[node name="CabinBackround(1)" type="Sprite2D" parent="." unique_id=222195730]
+position = Vector2(2.2888184e-05, -3.8146973e-05)
+scale = Vector2(0.6666667, 0.6666666)
+texture = ExtResource("2_8ln24")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1653103764]
 layout_mode = 1
