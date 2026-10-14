@@ -24,27 +24,31 @@ func _physics_process(_delta):
 	else:
 		$AnimatedSprite2D.play("idle")
 
+#check if player close enough to chase
 func _on_detection_area_body_entered(body: Node2D):
 	player = body
 	player_chase = true
 
-
+#check if player close enough to chase
 func _on_detection_area_body_exited(_body: Node2D):
 	player = null
 	player_chase = false
 
+
 func zombie():
 	pass
 
+#check if zombie is in the players hitbox
 func _on_zombie_hitbox_body_entered(body):
 	if body.has_method("player"):
 		player_inattack_zone = true
 
-
+#check if zombie is in the players hitbox
 func _on_zombie_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_inattack_zone = false
 		
+#check if zombie can take damage and if health 0 or below remove zombie
 func deal_with_damage():
 	if player_inattack_zone and global.player_current_attack == true:
 		if can_take_damage == true:
@@ -55,10 +59,11 @@ func deal_with_damage():
 			if health <= 0:
 				self.queue_free()
 
-
+#check if player cooldown is finished to take damage
 func _on_take_damage_cooldown_timeout():
 	can_take_damage = true
 
+#update zombie healthbar
 func update_health():
 	var healthbar = $healthbar
 	

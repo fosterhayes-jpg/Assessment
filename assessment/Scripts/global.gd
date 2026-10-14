@@ -25,7 +25,7 @@ var engine_collected = false
 var engine_used = false
 
 
-var current_scene = "world" #world cliff_side
+var current_scene = "world" 
 var transition_scene = false
 
 var player_exit_cliffside_posx = 400

@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://ca5pkal3455ve"]
+
+[ext_resource type="Texture2D" uid="uid://d24a5e73bouyl" path="res://Assets/Menu assets/Cabin backround (1).png" id="1_2fbfq"]
+[ext_resource type="Script" uid="uid://ba3eqt7ftt4lj" path="res://Scripts/credits.gd" id="1_8gwij"]
+[ext_resource type="FontFile" uid="uid://csmngx3po8526" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.otf" id="2_8gwij"]
+[ext_resource type="FontFile" uid="uid://m4oud3gmqah8" path="res://Assets/Extra tiems/noscary/NoScary-regular.ttf" id="3_mah5v"]
+[ext_resource type="FontFile" uid="uid://cu4gexj2gitdm" path="res://Assets/Extra tiems/nightscary (1)/Nightscary Free Trial.ttf" id="4_kyhnv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooihk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ih6pn"]
+bg_color = Color(0.57254905, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4.46)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lgdl"]
+bg_color = Color(0.3397337, 3.1435397e-06, 1.7086417e-06, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 4.46)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6kru"]
+bg_color = Color(0.50074106, 1.2153015e-06, 1.4439226e-07, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4.46)
+
+[node name="credits" type="Node2D" unique_id=1158435004]
+script = ExtResource("1_8gwij")
+
+[node name="Panel" type="Panel" parent="." unique_id=78071654]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ooihk")
+
+[node name="CabinBackround(1)" type="Sprite2D" parent="." unique_id=888306543]
+position = Vector2(576, 324)
+scale = Vector2(0.6666667, 0.6666666)
+texture = ExtResource("1_2fbfq")
+
+[node name="Label" type="Label" parent="." unique_id=1569843321]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 264.0
+offset_top = 128.0
+offset_right = 889.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.57254905, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8gwij")
+theme_override_font_sizes/font_size = 122
+text = "THE LAST PIXELS"
+
+[node name="Label2" type="Label" parent="." unique_id=326449721]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 232.0
+offset_top = 280.0
+offset_right = 920.0
+offset_bottom = 445.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_mah5v")
+theme_override_font_sizes/font_size = 50
+text = "Concept by: Morgan and Foster
+Game Desiner: Foster Hayes
+Artist: Morgan Del Nero"
+horizontal_alignment = 1
+
+[node name="exit" type="Button" parent="." unique_id=2062333707]
+offset_left = 504.0
+offset_top = 512.0
+offset_right = 648.0
+offset_bottom = 562.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_kyhnv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ih6pn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7lgdl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c6kru")
+text = "Close Game"
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

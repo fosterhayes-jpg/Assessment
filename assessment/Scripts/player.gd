@@ -12,7 +12,7 @@ var current_direction = "none"
 
 @onready var label: Label = $Camera2D/CanvasLayer/Label
 
-
+#start player in idle anmation
 func _ready():
 	$AnimatedSprite2D.play("front idle")
 
@@ -23,13 +23,15 @@ func _physics_process(delta):
 	update_health()
 	check_collectables()
 	check_used_parts()
+	
+	#check if player has died and if so respawn
 	if health <= 0:
 		player_alive = false
 		health = 0 
 		print("player has been killed")
 		get_tree().change_scene_to_file("res://scenes/cliff_side.tscn")
 
-#player movement and animation
+#player movement and choose what animation to play
 func playermovement(delta):
 	
 	if Input.is_action_pressed("ui_right"):
@@ -58,7 +60,8 @@ func playermovement(delta):
 		velocity.y = 0
 	
 	move_and_slide()
-	
+
+#play animation
 func play_anim(movement):
 	var dir = current_direction
 	var anim = $AnimatedSprite2D
@@ -96,16 +99,18 @@ func play_anim(movement):
 	
 func player():
 	pass
-	
+
+#check if player in attack range
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("zombie"):
 		zombie_inattack_range = true
 
-
+#check if player in attack range
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("zombie"):
 		zombie_inattack_range = false
-		
+
+#check if zombie in attack range and if cooldown is finish if so hit player
 func zombie_attack():
 	if zombie_inattack_range and zombie_attack_cooldown == true:
 		health = health - 15
@@ -113,9 +118,11 @@ func zombie_attack():
 		$attack_cooldown.start()
 		print(health)
 
+#turn on zombie cooldown
 func _on_attack_cooldown_timeout():
 	zombie_attack_cooldown = true
 
+#play attak animations
 func attack():
 	var dir = current_direction
 	
@@ -137,12 +144,13 @@ func attack():
 			$AnimatedSprite2D.play("back attack")
 			$deal_attack_timer.start()
 
+#check if player is attacking
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	global.player_current_attack = false
 	attack_ip = false
 
-#player healthbar
+#player updating healthbar
 func update_health():
 	var healthbar = $healthbar
 	
@@ -153,14 +161,16 @@ func update_health():
 	else: 
 		healthbar.visible = true
 
-func _on_regin_timer_timeout() -> void:
+#regen health every 2.5s and make sure it doesnt go over 100 or below 0
+func _on_regen_timer_timeout() -> void:
 	if health < 100:
 		health = health + 10
 		if health > 100:
 			health = 100
 	if health <= 0:
 		health = 0
-	
+
+#check how many parts have been collected to update label
 func check_collectables():
 	var num_collected = 0
 	if global.fuel_collected == true:
@@ -180,6 +190,7 @@ func check_collectables():
 	
 	label.text = str(num_collected) + "/7 parts collected"
 	
+#check how many parts have been used and if all 7 used change to the endgame scene
 func check_used_parts():
 		
 	var num_used = 0

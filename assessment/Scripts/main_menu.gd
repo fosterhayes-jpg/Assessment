@@ -10,16 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-
-
-func _on_settings_pressed() -> void:
-	pass # Replace with function body.
-
-
+#close game if player presses exit
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
-
+#take player to cliffside if 'start' button pressed
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/cliff_side.tscn")

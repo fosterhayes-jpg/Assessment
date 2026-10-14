@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c68cyj2nxyi3g"]
+
+[ext_resource type="Texture2D" uid="uid://2b3tqofvr6f" path="res://Assets/Nature assets/Trees (1).png" id="1_avsvi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vplca"]
+atlas = ExtResource("1_avsvi")
+region = Rect2(62, 0, 62, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_viusy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vplca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="tree" type="CharacterBody2D" unique_id=435654354]
+y_sort_enabled = true
+scale = Vector2(1.11, 1.11)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2106446974]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_viusy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=914260898]
+position = Vector2(13.04348, 4.3478265)
+scale = Vector2(0.925, 0.925)
+polygon = PackedVector2Array(-23.501766, 40.736393, -23.501766, 26.635332, -10.967491, 26.635332, -12.534276, 40.736393)

@@ -6,6 +6,7 @@ var player_in_area = false
 func _ready() -> void:
 	pass
 
+#check if player has collectable if so use the part and play fixing audio
 func _process(delta: float) -> void:
 	if player_in_area:
 		$Label.visible = true
@@ -68,11 +69,12 @@ func _process(delta: float) -> void:
 		elif not global.engine_collected:
 			print("You need a engine")
 
+#check if player is in repair zone
 func _on_give_item_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = true
 
-
+#check if player is in repair zone
 func _on_give_item_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false

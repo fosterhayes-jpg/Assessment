@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://hktt5f5arn47"]
 
 [ext_resource type="FontFile" uid="uid://m4oud3gmqah8" path="res://Assets/Extra tiems/noscary/NoScary-regular.ttf" id="1_gn7wn"]
+[ext_resource type="Script" uid="uid://qkfija8wnikj" path="res://Scripts/next.gd" id="2_n1x8e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1x8e"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4w7i"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ilay"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="end game scene" type="Node2D" unique_id=351989690]
@@ -29,3 +36,26 @@ theme_override_fonts/font = ExtResource("1_gn7wn")
 theme_override_font_sizes/font_size = 80
 text = "congratulations on escaping 
 before the zombies caught you"
+
+[node name="next" type="Button" parent="." unique_id=396746743]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 480.0
+offset_top = 512.0
+offset_right = 608.0
+offset_bottom = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.57254905, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gn7wn")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_n4w7i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ilay")
+text = "NEXT"
+script = ExtResource("2_n1x8e")
+
+[connection signal="pressed" from="next" to="next" method="_on_pressed"]

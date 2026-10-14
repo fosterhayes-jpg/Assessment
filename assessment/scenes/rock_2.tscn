@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ckbx4kgycnma6"]
+
+[ext_resource type="Texture2D" uid="uid://cavo0u8kx316v" path="res://Assets/Nature assets/Extra rocks.png" id="1_dco6i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmj1u"]
+atlas = ExtResource("1_dco6i")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04xd7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmj1u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="rock 2" type="CharacterBody2D" unique_id=1428644478]
+y_sort_enabled = true
+scale = Vector2(0.3, 0.3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=273563716]
+sprite_frames = SubResource("SpriteFrames_04xd7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=175141750]
+polygon = PackedVector2Array(-48, 48, 48, 48, 40, 32, 32, 32, 24, 24, -32, 24)

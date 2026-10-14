@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 var player_in_area = false
 
-#picking up battery
+#remove collectable if player has picked it up
 func _ready() -> void:
 	if global.battery_collected:
 		queue_free()
 
+#show the 'press e to pick up' label when the player in pickup area and check if the pickup action is pressed tpo remove collectable
 func _process(delta: float) -> void:
 	if player_in_area:
 		$Label.visible = true
@@ -20,11 +21,12 @@ func _process(delta: float) -> void:
 		
 		
 		
-		#player in pickup area
+#checking if player is in pickup area
 func _on_pickable_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = true
 
+#checking if player is in pickup area
 func _on_pickable_area_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false

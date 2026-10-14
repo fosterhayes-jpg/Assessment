@@ -10,11 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#if player presses next take to next scene (story)
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/story.tscn")
 
 
-
+#if back button pressed take player back to past scene (please wear headphones)
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/wear_headphones.tscn")
