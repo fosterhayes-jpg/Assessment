@@ -135,7 +135,7 @@ shape = SubResource("RectangleShape2D_qfnet")
 [node name="fixing" type="AudioStreamPlayer2D" parent="." unique_id=427531953]
 stream = ExtResource("8_4mrxx")
 
-[node name="zombies" type="Node" parent="." unique_id=187745312]
+[node name="zombies" type="Node" parent="." unique_id=2086399197]
 
 [node name="zombie" parent="zombies" unique_id=437287189 instance=ExtResource("3_4wyf3")]
 position = Vector2(696, 160)

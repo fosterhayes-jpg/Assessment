@@ -94,6 +94,7 @@ radius = 80.0
 radius = 30.331758
 
 [node name="zombie" type="CharacterBody2D" unique_id=437287189]
+z_index = 10
 script = ExtResource("1_httt1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=10617456]

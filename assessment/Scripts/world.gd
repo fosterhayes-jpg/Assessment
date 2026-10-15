@@ -1,6 +1,6 @@
 extends Node2D
 
-var list_of_zombies = []
+var list_of_zombies: Array[Node] = []
 @onready var player: CharacterBody2D = $player
 
 var min_x = 120
@@ -13,7 +13,7 @@ func _ready():
 	player.position.x = global.player_exit_world_posx
 	player.position.y = global.player_exit_world_posy
 	# Generates a list of all immediate child nodes
-	var list_of_zombies: Array[Node] = $zombies.get_children()
+	list_of_zombies = $zombies.get_children()
 	# You can loop through the generated list
 	for child in list_of_zombies:
 		child.position = Vector2(randf_range(min_x, max_x), randf_range(min_y, max_y))

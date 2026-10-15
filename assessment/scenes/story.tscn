@@ -2,8 +2,15 @@
 
 [ext_resource type="FontFile" uid="uid://m4oud3gmqah8" path="res://Assets/Extra tiems/noscary/NoScary-regular.ttf" id="1_1octt"]
 [ext_resource type="Script" uid="uid://dotoa3so07h3d" path="res://Scripts/rich_text_label.gd" id="1_lcs0l"]
+[ext_resource type="Script" uid="uid://csupihwmyr4k8" path="res://Scripts/story.gd" id="1_md1pp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahtca"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wq8l7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of347"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="story" type="Control" unique_id=432273605]
@@ -13,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_md1pp")
 
 [node name="Panel" type="Panel" parent="." unique_id=1851842265]
 layout_mode = 0
@@ -36,23 +44,45 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_1octt")
 theme_override_font_sizes/normal_font_size = 34
 bbcode_enabled = true
-text = "The city was gone in three days.
-It started with a virus. Then came the fever, 
-the panic, and finally, the dead began to rise.
-Now the streets are silent, 
-except for the sounds of the infected wandering through the ruins.
-You were supposed to leave with everyone else. 
-But when the evacuation collapsed, 
-you were left behind.
-There is only one way out.
-A quarantine zone lies beyond the city, 
-but your truck won't make the journey—not without repairs.
-The parts you need are scattered throughout the abandoned streets, 
-hidden among the remains of a world that fell apart overnight.
-And time is running out.
-The infection is spreading. The hordes are growing.
-Find the parts. Repair the truck. Reach the quarantine zone.
-Survive long enough to escape."
+text = "It only took three days
+It started with a virus. Then it moved to the brain
+People changed: aggression, loss of every human trait
+The panic spread as fast as the virus
+Now the streets are silent
+Except for the sounds of the infected echoing through the ruins
+You were supposed to leave with everyone else
+But when the evacuation was raided by the zombies
+You were left behind
+The quarantine zone lies beyond the town
+The only way out is your truck, but it won't make the journey
+Not without repairs
+The parts you need are scattered throughout the town and forest
+But time is running out
+The infection is spreading. The hordes are growing
+Find the parts, repair the truck, and reach the quarantine zone
+Survive!
+Survive long enough to escape"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_lcs0l")
+
+[node name="next" type="Button" parent="." unique_id=687984114]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.57254905, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1octt")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_wq8l7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_of347")
+text = "skip"
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
